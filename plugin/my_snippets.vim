@@ -18,9 +18,22 @@ let g:template['html']['script'] = "<script src=\"".g:rs."...".g:re."\"></script
 let g:template['html']['link'] = "<link rel=\"stylesheet\" media=\"screen\" href=\"".g:rs."...".g:re."\" />"
 let g:template['html']['img'] = "<img class=\"\" alt=\"\" src=\"".g:rs."...".g:re."\" />"
 
+let g:template['html']['blkqut'] = "<blockquote class=\"\">".g:rs."...".g:re."</blockquote>"
+let g:template['html']['pre'] = "<pre>".g:rs."...".g:re."</pre>"
+let g:template['html']['li'] = "<li>".g:rs."...".g:re."</li>"
+let g:template['html']['ul'] = "<ul class=\"\">\<cr>".
+                                    \g:template['html']['li'].
+                                    \g:template['html']['li'].
+                              \"</ul>"
+let g:template['html']['ol'] = "<ol class=\"\">\<cr>".
+                                    \g:template['html']['li'].
+                                    \g:template['html']['li'].
+                              \"</ol>"
+
 let g:template['html']['htmltemplate'] = "<!DOCTYPE html>\<cr>".
             \"<html lang=\"en\">\<cr>".
                 \"<head>\<cr>".
+                    \"<meta charset=\"UTF-8\" />".
                     \"<title>New Page</title>\<cr>".
                     \"<link rel=\"stylesheet\" media=\"screen\" href=\"styles/style.css\" />\<cr>".
                 \"</head>\<cr>".
@@ -32,6 +45,48 @@ let g:template['html']['htmltemplate'] = "<!DOCTYPE html>\<cr>".
             \"</html>\<cr>"
 
 " ===For HTML End==========================
+
+" ===For writing blog Begin================
+let g:template['html']['comtxt'] = "<p class=\"common_txt\">".g:rs."...".g:re."</p>"
+let g:template['html']['keypoint'] = "<blockquote class=\"key_point\">".g:rs."...".g:re."</blockquote>"
+let g:template['html']['em1'] = "<span class=\"em_l1\">".g:rs."...".g:re."</span>"
+let g:template['html']['em2'] = "<span class=\"em_l2\">".g:rs."...".g:re."</span>"
+let g:template['html']['em3'] = "<span class=\"em_l3\">".g:rs."...".g:re."</span>"
+let g:template['html']['emhl'] = "<span class=\"em_hl\">".g:rs."...".g:re."</span>"
+let g:template['html']['keyw'] = "<span class=\"keyword\">".g:rs."...".g:re."</span>"
+let g:template['html']['tit'] = "<h2 class=\"tit\">".g:rs."...".g:re."</h2>"
+let g:template['html']['ulist'] = "<ul class=\"ulist\">\<cr>".
+                                    \g:template['html']['li']."\<cr>".
+                                    \g:template['html']['li']."\<cr>".
+                                 \"</ul>"
+let g:template['html']['olist'] = "<ol class=\"olist\">\<cr>".
+                                    \g:template['html']['li']."\<cr>".
+                                    \g:template['html']['li']."\<cr>".
+                                 \"</ol>"
+let g:template['html']['cppcode'] = "<pre class=\"brush: cpp; first-line: 0\">\<cr>".
+                                        \g:rs."...".g:re."\<cr></pre>"
+let g:template['html']['cscode'] = "<pre class=\"brush: csharp; first-line: 0\">\<cr>".
+                                        \g:rs."...".g:re."\<cr></pre>"
+let g:template['html']['asmcode'] = "<pre class=\"brush: asm; first-line: 0\">\<cr>".
+                                        \g:rs."...".g:re."\<cr></pre>"
+
+let g:template['html']['blogpage'] =  "<!DOCTYPE html>\<cr>".
+            \"<html lang=\"en\">\<cr>".
+                \"<head>\<cr>".
+                    \"<meta charset=\"UTF-8\" />".
+                    \"<title>New Page</title>\<cr>".
+                    \"<link rel=\"stylesheet\" media=\"screen\" href=\"blog_style.css\" />\<cr>".
+                \"</head>\<cr>".
+                \"<body>\<cr>".
+                    \"<div id=\"main_container\">\<cr>".
+                        \"<div class=\"blog_main\">\<cr>".
+                            \g:template['html']['comtxt']."\<cr>".
+                        \"</div>\<cr>".
+                    \"</div>\<cr>".
+                    \"<script src=\"scripts/onload.js\"></script>\<cr>".
+                \"</body>\<cr>".
+            \"</html>\<cr>"
+" ===For writing blog End==================
 
 " ===For C# Begin==========================
 let g:template['cs'] = {}
