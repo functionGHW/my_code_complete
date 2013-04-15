@@ -54,6 +54,7 @@ let g:template['html']['em2'] = "<span class=\"em_l2\">".g:rs."...".g:re."</span
 let g:template['html']['em3'] = "<span class=\"em_l3\">".g:rs."...".g:re."</span>"
 let g:template['html']['emhl'] = "<span class=\"em_hl\">".g:rs."...".g:re."</span>"
 let g:template['html']['keyw'] = "<span class=\"keyword\">".g:rs."...".g:re."</span>"
+let g:template['html']['mjax'] = "<span class=\"mjax\">\\(".g:rs."...".g:re."\\)</span>"
 let g:template['html']['tit'] = "<h2 class=\"tit\">".g:rs."...".g:re."</h2>"
 let g:template['html']['ulist'] = "<ul class=\"ulist\">\<cr>".
                                     \g:template['html']['li']."\<cr>".
@@ -83,6 +84,15 @@ let g:template['html']['blogpage'] =  "<!DOCTYPE html>\<cr>".
                             \g:template['html']['comtxt']."\<cr>".
                         \"</div>\<cr>".
                     \"</div>\<cr>".
+                    \"<!--Scripts-->\<cr>".
+                    \"<script type=\"text/x-mathjax-config\">\<cr>".
+                    \"MathJax.Hub.Config({\<cr>".
+                    \"tex2jax: {\<cr>".
+                    \"inlineMath: [['$','$'], [\"\\\\(\",\"\\\\)\"]],\<cr>".
+                    \"processEscapes: true\<cr>".
+                    \"}\<cr>".
+                    \"}); </script>\<cr>".
+                    \"<script src=\"mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML\"></script>\<cr>".
                     \"<script src=\"scripts/onload.js\"></script>\<cr>".
                 \"</body>\<cr>".
             \"</html>\<cr>"
