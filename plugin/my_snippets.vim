@@ -22,18 +22,18 @@ let g:template['html']['blkqut'] = "<blockquote class=\"\">".g:rs."...".g:re."</
 let g:template['html']['pre'] = "<pre>".g:rs."...".g:re."</pre>"
 let g:template['html']['li'] = "<li>".g:rs."...".g:re."</li>"
 let g:template['html']['ul'] = "<ul class=\"\">\<cr>".
-                                    \g:template['html']['li'].
-                                    \g:template['html']['li'].
-                              \"</ul>"
+                                    \g:template['html']['li']."\<cr>".
+                                    \g:template['html']['li']."\<cr>".
+                              \"</ul>\<cr>"
 let g:template['html']['ol'] = "<ol class=\"\">\<cr>".
-                                    \g:template['html']['li'].
-                                    \g:template['html']['li'].
-                              \"</ol>"
+                                    \g:template['html']['li']."\<cr>".
+                                    \g:template['html']['li']."\<cr>".
+                              \"</ol>\<cr>"
 
 let g:template['html']['htmltemplate'] = "<!DOCTYPE html>\<cr>".
             \"<html lang=\"en\">\<cr>".
                 \"<head>\<cr>".
-                    \"<meta charset=\"UTF-8\" />".
+                    \"<meta charset=\"UTF-8\" />\<cr>".
                     \"<title>New Page</title>\<cr>".
                     \"<link rel=\"stylesheet\" media=\"screen\" href=\"styles/style.css\" />\<cr>".
                 \"</head>\<cr>".
@@ -64,18 +64,22 @@ let g:template['html']['olist'] = "<ol class=\"olist\">\<cr>".
                                     \g:template['html']['li']."\<cr>".
                                     \g:template['html']['li']."\<cr>".
                                  \"</ol>"
-let g:template['html']['cppcode'] = "<pre class=\"brush: cpp; first-line: 0\">\<cr>".
+let g:template['html']['cppcode'] = "<pre class=\"brush: cpp; first-line: 1\">\<cr>".
                                         \g:rs."...".g:re."\<cr></pre>"
-let g:template['html']['cscode'] = "<pre class=\"brush: csharp; first-line: 0\">\<cr>".
+let g:template['html']['cscode'] = "<pre class=\"brush: csharp; first-line: 1\">\<cr>".
                                         \g:rs."...".g:re."\<cr></pre>"
-let g:template['html']['asmcode'] = "<pre class=\"brush: asm; first-line: 0\">\<cr>".
+let g:template['html']['asmcode'] = "<pre class=\"brush: asm; first-line: 1\">\<cr>".
                                         \g:rs."...".g:re."\<cr></pre>"
 
 let g:template['html']['blogpage'] =  "<!DOCTYPE html>\<cr>".
             \"<html lang=\"en\">\<cr>".
                 \"<head>\<cr>".
-                    \"<meta charset=\"UTF-8\" />".
+                    \"<meta charset=\"UTF-8\" />\<cr>".
                     \"<title>New Page</title>\<cr>".
+                    \"<link type=\"text/css\" rel=\"stylesheet\" ".
+                    \"href=\"syntaxhighlighter_3.0.83/styles/shCore.css\"/>\<cr>".
+                    \"<link type=\"text/css\" rel=\"stylesheet\" ".
+                    \"href=\"syntaxhighlighter_3.0.83/styles/shCoreDjango.css\"/>\<cr>".
                     \"<link rel=\"stylesheet\" media=\"screen\" href=\"blog_style.css\" />\<cr>".
                 \"</head>\<cr>".
                 \"<body>\<cr>".
@@ -93,6 +97,13 @@ let g:template['html']['blogpage'] =  "<!DOCTYPE html>\<cr>".
                     \"}\<cr>".
                     \"}); </script>\<cr>".
                     \"<script src=\"mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML\"></script>\<cr>".
+                    \"<script type=\"text/javascript\" src=\"syntaxhighlighter_3.0.83/scripts/shCore.js\">".
+                    \"</script>\<cr>".
+                    \"<script type=\"text/javascript\" src=\"syntaxhighlighter_3.0.83/scripts/shBrushes.js\">".
+                    \"</script>\<cr>".
+                    \"<script type=\"text/javascript\" src=\"syntaxhighlighter_3.0.83/scripts/shLegacy.js\">".
+                    \"</script>\<cr>".
+                    \"<script type=\"text/javascript\">SyntaxHighlighter.all();</script>\<cr>".
                     \"<script src=\"scripts/onload.js\"></script>\<cr>".
                 \"</body>\<cr>".
             \"</html>\<cr>"
@@ -158,7 +169,7 @@ let g:template['cs']['wrtl'] = "Console.WriteLine(".g:rs."obj or expr".g:re.");"
 let g:template['cs']['Main'] = "static void Main(string[] args)\<cr>".
                               \"{\<cr>".
                                     \g:rs."to do".g:re."\<cr>".
-                              \"}// end Main"
+                              \"}// end Main\<cr>"
 
 let g:template['cs']['cstemplate'] = "using System;\<cr>".
                                     \"using System.Collections.Generic;\<cr>".
@@ -170,7 +181,7 @@ let g:template['cs']['cstemplate'] = "using System;\<cr>".
                                         \"{\<cr>".
                                         \g:template['cs']['Main'].
                                         \"}// end class\<cr>".
-                                    \"}// end namespace"
+                                    \"}// end namespace\<cr>"
 
 " ===For C# End===========================
 
