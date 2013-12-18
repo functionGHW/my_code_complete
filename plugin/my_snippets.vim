@@ -30,6 +30,36 @@ let g:template['html']['ol'] = "<ol class=\"\">\<cr>".
                                     \g:template['html']['li']."\<cr>".
                               \"</ol>\<cr>"
 
+let g:template['html']['option'] = "<option value=\"".g:rs."...".g:re."\">".g:rs."...".g:re."</option>"
+let g:template['html']['select'] = "<select id=\"".g:rs."...".g:re."\">\<cr>".
+                                        \g:template['html']['option']."\<cr>".
+                                \"</select>"
+
+let g:template['html']['table'] = "<table class=\"".g:rs."...".g:re."\">\<cr>".
+                                        \"<tr>\<cr><td></td>\<cr><td></td>\<cr></tr>\<cr>".
+                                \"</table>"
+
+let g:template['html']['lbl'] = "<label class=\"\">".g:rs."...".g:re."</label>"
+let g:template['html']['text'] = "<input type=\"text\" name=\"".g:rs."...".g:re."\" />"
+let g:template['html']['pwd'] = "<input type=\"password\" name=\"".g:rs."...".g:re."\" />"
+let g:template['html']['radio'] = "<input type=\"radio\" name=\"".g:rs."...".
+                                    \g:re."\" value=\"".g:rs."...".g:re."\" />"
+let g:template['html']['chkbox'] = "<input type=\"checkbox\" name=\"".g:rs."...".
+                                        \g:re."\" value=\"".g:rs."...".g:re."\" />"
+let g:template['html']['button'] = "<button type=\"button\" id=\"\">".g:rs."...".g:re."</button>"
+let g:template['html']['submit'] = "<button type=\"submit\">".g:rs."...".g:re."</button>"
+let g:template['html']['tarea'] = "<textarea id=\"".g:rs."...".g:re."\"></textarea>"
+
+let g:template['html']['form'] = "<form name=\"\" method=\"post\" action=\"\">\<cr>".
+                                    \g:rs."...".g:re."\<cr></form>\<cr>"
+let g:template['html']['loginform'] = "<form name=\"loginform\" method=\"post\" action=\"\">\<cr>".
+                                            \"<label>".g:rs."...".g:re."</label>\<cr>".
+                                            \"<input type=\"text\" name=\"username\" /><br />\<cr>".
+                                            \"<label>".g:rs."...".g:re."</label>\<cr>".
+                                            \"<input type=\"password\" name=\"password\" /><br />\<cr>".
+                                            \g:template['html']['submit']."\<cr>".
+                                     \"</form>"
+
 let g:template['html']['htmltemplate'] = "<!DOCTYPE html>\<cr>".
             \"<html lang=\"en\">\<cr>".
                 \"<head>\<cr>".
