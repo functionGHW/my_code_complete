@@ -8,6 +8,41 @@
 " ...
 "
 
+
+" ===Define Functions=====================
+
+" [Get converted file name like 'file.c' ]
+function! InsertFileName()
+    let _name=expand("%:t")
+    "let filename=toupper(filename)
+    "let _name=substitute(filename,'\.','_',"g")
+    "let _name="__"._name."__"
+    return _name
+endfunction
+
+" [Get current path]
+function! GetCurrentPath()
+    let _name=expand("%:p:h")
+    "let filename=toupper(filename)
+    "let _name=substitute(filename,'\.','_',"g")
+    "let _name="__"._name."__"
+    return _name
+endfunction
+" ===Define Functions=====================
+
+
+" ===Additional for c, cpp, _ Begin========
+let g:template['_']['xfn'] = "\<c-r>=InsertFileName()\<cr>"
+let g:template['_']['xpath'] = "\<c-r>=GetCurrentPath()\<cr>"
+let g:template['_']['filedeclaration'] = "/* FileName: <c-r>=InsertFileName()\<cr>\<cr>".
+                                        \"Copyright (c) functionghw".
+                                        \"Author:\<cr>".
+                                        \"\tfunctionghw <functionghw@hotmail.com>\<cr>".
+                                        \"Description:\<cr>".
+                                        \"\<cr>".
+                                        \"*/\<cr>"
+" ===Additional for c, cpp, _ End==========
+
 " ===For HTML Begin========================
 let g:template['html'] = {}
 let g:template['html']['p'] = "<p class=\"\">".g:rs."...".g:re."</p>"
@@ -94,6 +129,9 @@ let g:template['html']['olist'] = "<ol class=\"olist\">\<cr>".
                                     \g:template['html']['li']."\<cr>".
                                     \g:template['html']['li']."\<cr>".
                                  \"</ol>"
+
+let g:template['html']['pycode'] = "<pre class=\"brush: python; first-line: 1\">\<cr>".
+                                        \g:rs."...".g:re."\<cr></pre>"
 let g:template['html']['cppcode'] = "<pre class=\"brush: cpp; first-line: 1\">\<cr>".
                                         \g:rs."...".g:re."\<cr></pre>"
 let g:template['html']['cscode'] = "<pre class=\"brush: csharp; first-line: 1\">\<cr>".
